@@ -7,7 +7,7 @@ Requirements
 ============
 
 We use check_json from https://github.com/c-kr/check_json you must
-install it to use these plugins
+install it if you want to use **check_osrm_viaroute_result**
 
 Usage
 =====
@@ -43,7 +43,7 @@ Sample
     define service {
         host_name                       osrm.quiedeville.org
         service_description             trucks
-        check_command                   check_osrm_viaroute_result!5002!50.294713,2.782288!50.284294,2.797050
+        check_command                   check_osrm_viaroute_result!5002!50.294,2.782!50.281,2.792
     }
 
 
