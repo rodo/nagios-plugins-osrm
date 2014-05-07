@@ -6,37 +6,25 @@ Nagios plugins for osrm
 Requirements
 ============
 
-We use check_json from https://github.com/c-kr/check_json you must
-install it if you want to use **check_osrm_viaroute_result**
+All commands uses the **check_http** standard command, except
+**check_osrm_viaroute_result** which uses **check_json** from
+https://github.com/c-kr/check_json.
+
 
 Usage
 =====
 
-Use check_http to check all functions in osrm api
+* check_osrm!PORT
 
-* check_osrm
+* check_osrm_hello!PORT
 
-Usage : check_osrm!PORT
+* check_osrm_locate!PORT!LOCATION
 
-* check_osrm_hello
+* check_osrm_nearest!PORT!LOCATION
 
-Usage : check_osrm_hello!PORT
+* check_osrm_viaroute!PORT!LOCATION_1!LOCATION_2
 
-* check_osrm_locate
-
-Usage : check_osrm_locate!PORT!LOCATION
-
-* check_osrm_nearest
-
-Usage : check_osrm_nearest!PORT!LOCATION
-
-* check_osrm_viaroute
-
-Usage : check_osrm_viaroute!PORT!LOCATION_1!LOCATION_2
-
-* check_osrm_viaroute_result
-
-Usage : check_osrm_viaroute_result!PORT!LOCATION_1!LOCATION_2
+* check_osrm_viaroute_result!PORT!LOCATION_1!LOCATION_2
 
 Sample
 
@@ -46,6 +34,12 @@ Sample
         check_command                   check_osrm_viaroute_result!5002!50.294,2.782!50.281,2.792
     }
 
+Variables
+=========
+
+* **PORT** : the tcp port on which osrm listen
+
+* **LOCATION** : coordinate as lat,lon as OSRM 
 
 
 
